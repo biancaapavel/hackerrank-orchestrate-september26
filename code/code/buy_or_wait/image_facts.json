@@ -1,0 +1,114 @@
+{
+  "image_01": {
+    "sha256": "f37b40e6af42c664846057252cac89ad41b7d029dfe8dacff2db8cceb79fa5ba",
+    "amount": "4365000",
+    "currency": "IDR",
+    "extraction": "Tesseract 5 OCR with Codex-assisted review; handwritten/ambiguous totals visually checked",
+    "evidence": "Net Pay: IDR 4,365,000; net cash rather than gross earnings."
+  },
+  "image_02": {
+    "sha256": "ccd779e5382b1bcfacfb47d4ccf346ffd667a34c8b94d0cfd48aa4a609bd117d",
+    "amount": "100000",
+    "currency": "INR",
+    "extraction": "Tesseract 5 OCR with Codex-assisted review; handwritten/ambiguous totals visually checked",
+    "evidence": "Total receivable 200,000 minus amount received 100,000: outstanding 100,000."
+  },
+  "image_03": {
+    "sha256": "e5fb0bbcda6cc06f8ea95e32e45d4c76acd8c594f4b02ff0d78e6006e103ee4d",
+    "amount": "41272",
+    "currency": "INR",
+    "extraction": "Tesseract 5 OCR with Codex-assisted review; handwritten/ambiguous totals visually checked",
+    "evidence": "Net Amount and Cash Paid both 41,272.00."
+  },
+  "image_04": {
+    "sha256": "281e7f1e7bd1f98fbd53cde1381977373e610e6634b11c98098000001ff10f0c",
+    "amount": "2854",
+    "currency": "INR",
+    "extraction": "Tesseract 5 OCR with Codex-assisted review; handwritten/ambiguous totals visually checked",
+    "evidence": "Delivered order: Item Bill 2,854.00."
+  },
+  "image_05": {
+    "sha256": "9abcda5647afb3dcdf91613253ac0160bd722333af33a4b952dfc96fea6ff97b",
+    "amount": "704.05",
+    "currency": "INR",
+    "extraction": "Tesseract 5 OCR with Codex-assisted review; handwritten/ambiguous totals visually checked",
+    "evidence": "Current amount due 704.05; previous balance paid; late amount 822.05 is not currently due."
+  },
+  "image_06": {
+    "sha256": "9055551fbe5940feb01b947e1f18ccfed093192d103b1e930a56df0ea7cd3cb4",
+    "amount": "1995",
+    "currency": "INR",
+    "extraction": "Tesseract 5 OCR with Codex-assisted review; handwritten/ambiguous totals visually checked",
+    "evidence": "Amount in words: one thousand nine hundred ninety-five rupees."
+  },
+  "image_07": {
+    "sha256": "f6d30a74355224c0b5cda2d7f96399a7b1a0afe4f9fe59ea048bbecb1a21311e",
+    "amount": "8528",
+    "currency": "INR",
+    "extraction": "Tesseract 5 OCR with Codex-assisted review; handwritten/ambiguous totals visually checked",
+    "evidence": "Final rounded Grand Total (RS) 8,528; pre-rounding total 8,528.10."
+  },
+  "image_08": {
+    "sha256": "e28592ad8b4dacd03055e0b1ebc46670c83fbfa1162af07bdef33bb226bf63c8",
+    "amount": "15339",
+    "currency": "INR",
+    "extraction": "Tesseract 5 OCR with Codex-assisted review; handwritten/ambiguous totals visually checked",
+    "evidence": "Total Amount Received 15,339.00; already paid receipt."
+  },
+  "image_09": {
+    "sha256": "e0e74e14425d923ff8a5c6db26ec6f4f26ee4697bfd257e414ba05c947a75ba8",
+    "amount": "723",
+    "currency": "INR",
+    "extraction": "Tesseract 5 OCR with Codex-assisted review; handwritten/ambiguous totals visually checked",
+    "evidence": "Total Amount Received 723.00; already paid water receipt."
+  },
+  "image_10": {
+    "sha256": "c90f98caf0877083e471fd47dace772f83d4782037cf112e97c63f79a10ea8cf",
+    "amount": "79679.26",
+    "currency": "INR",
+    "extraction": "Tesseract 5 OCR with Codex-assisted review; handwritten/ambiguous totals visually checked",
+    "evidence": "Total and Balance Due both 79,679.26; OCR currency glyph can appear as digit 2."
+  },
+  "image_11": {
+    "sha256": "795e000d48428c97748e8af370cb02b604bec88cc52ec8930f38dc744624e886",
+    "amount": "3650",
+    "currency": "INR",
+    "extraction": "Tesseract 5 OCR with Codex-assisted review; handwritten/ambiguous totals visually checked",
+    "evidence": "Amount Payable and Balance 3,650.00; amount paid zero."
+  },
+  "image_12": {
+    "sha256": "e10b0123e66d512d82f6c431fb741053b336627b89b9d9a138071ac6980a14ff",
+    "amount": "33.50",
+    "currency": "USD",
+    "extraction": "Tesseract 5 OCR with Codex-assisted review; handwritten/ambiguous totals visually checked",
+    "evidence": "Taxi Total 33.50; cash tendered 40.00 and change 6.50."
+  },
+  "image_13": {
+    "sha256": "1ae54b378a9556d94b753093ba80e7117caf86fab4d3fe11ec84e3dd2f6d6dd8",
+    "amount": "2298",
+    "currency": "INR",
+    "extraction": "Tesseract 5 OCR with Codex-assisted review; handwritten/ambiguous totals visually checked",
+    "evidence": "Total paid 2,298 including taxes and delivery."
+  },
+  "image_14": {
+    "sha256": "bf88e4aa35e6f36304cbf76bf6f505f32b04466bfd5f7df693fcb3ebe8a3e2c1",
+    "amount": "4543",
+    "currency": "INR",
+    "extraction": "Tesseract 5 OCR with Codex-assisted review; handwritten/ambiguous totals visually checked",
+    "evidence": "Handwritten TOTAL 4,543.00, verified visually; line amounts sum to 4,543."
+  },
+  "image_15": {
+    "sha256": "0c0fe3d79e670f2b423bbb2aafc0b5601d3eb4e659ac64058cd189abf7792ee1",
+    "amount": "9968",
+    "currency": "INR",
+    "extraction": "Tesseract 5 OCR with Codex-assisted review; handwritten/ambiguous totals visually checked",
+    "evidence": "Grand Total including taxes 9,968.00."
+  },
+  "image_16": {
+    "sha256": "2665cf731a861ddb217be5b8082fbd390850a7a98feec018519b6fda0b30b4f8",
+    "amount": "393.22",
+    "currency": "INR",
+    "extraction": "Tesseract 5 OCR with Codex-assisted review; handwritten/ambiguous totals visually checked",
+    "evidence": "Total wallet payment 393.22 including CGST and SGST."
+  }
+}
