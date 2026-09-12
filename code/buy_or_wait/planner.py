@@ -5,7 +5,7 @@ from datetime import date, timedelta
 from decimal import Decimal
 from itertools import combinations, product
 
-from .data import Dataset, ZERO, day, fmt, money
+from .data import Dataset, ZERO, day, fmt, fmt_money, money
 from .forecast import Forecast, build_forecast, month_date
 
 
@@ -52,7 +52,7 @@ def spending_options(forecast: Forecast, profile: dict):
         if category in reduce and event["flexibility"] in {"reducible", "reducible_or_stoppable"} and event["minimum_allowed_amount"]:
             lower = money(event["minimum_allowed_amount"])
             if ZERO <= lower < recurrence.amount:
-                alternatives.append((event["event_id"], lower, f"reduce_to:{event['event_id']}:{fmt(lower)}"))
+                alternatives.append((event["event_id"], lower, f"reduce_to:{event['event_id']}:{fmt_money(lower)}"))
         if alternatives and recurrence.dates:
             choices.append(alternatives)
     for count in range(1, min(3, len(choices)) + 1):
@@ -108,15 +108,15 @@ def solve(data: Dataset, request: dict) -> tuple[dict, dict]:
             consider(changes, actions)
     best = min(candidates, key=Candidate.rank) if candidates else None
     currency = profile["home_currency"]
-    opening_text = f"{currency} {fmt(forecast.opening)} available; protect {fmt(forecast.minimum)} minimum."
+    opening_text = f"{currency} {fmt_money(forecast.opening)} available; protect {fmt_money(forecast.minimum)} minimum."
     if best:
         status = ("affordable_now" if best.method == "full_payment" and not best.changes else
                   "affordable_later" if best.method == "wait" and not best.changes else "affordable_with_plan")
-        plan_text = "|".join(f"{when.isoformat()}:{fmt(value)}" for when, value in best.payments)
+        plan_text = "|".join(f"{when.isoformat()}:{fmt_money(value)}" for when, value in best.payments)
         minimum = min(balance for _, balance in forecast.balances(best.changes, best.payments))
-        explanation = (f"{opening_text} Pay {currency} {fmt(sum(a for _, a in best.payments))} "
+        explanation = (f"{opening_text} Pay {currency} {fmt_money(sum(a for _, a in best.payments))} "
                        f"via {best.method.replace('_', ' ')}; finish {best.payments[-1][0]}. "
-                       f"Forecast low {fmt(minimum)} through {forecast.end}.")
+                       f"Forecast low {fmt_money(minimum)} through {forecast.end}.")
         if best.actions:
             explanation += " Apply " + ", ".join(best.actions) + "."
     else:
@@ -129,7 +129,7 @@ def solve(data: Dataset, request: dict) -> tuple[dict, dict]:
         explanation += " Evidence: " + ",".join(forecast.evidence.references) + "."
     next_income = next((f for f in forecast.flows if f.amount > ZERO), None)
     if next_income:
-        explanation += f" Next supported income: {fmt(next_income.amount)} on {next_income.date}."
+        explanation += f" Next supported income: {fmt_money(next_income.amount)} on {next_income.date}."
     output = {
         "request_id": request["request_id"], "amount_safe_to_pay": fmt(safe_today),
         "affordability_status": status, "recommended_payment_method": best.method if best else "not_recommended",

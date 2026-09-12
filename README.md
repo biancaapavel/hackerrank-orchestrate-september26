@@ -1,5 +1,23 @@
 # HackerRank Orchestrate
 
+## Implemented solution
+
+The runnable Python implementation is now in `code/`. No API keys or third-party
+Python packages are required for inference.
+
+```bash
+python3 code/main.py
+python3 code/main.py --samples
+python3 -m unittest discover -s code/tests -v
+python3 code/package_submission.py
+```
+
+Read [the solution guide](code/README.md) for the architecture, assumptions, image
+evidence workflow, validation, and packaging. Public-example metrics and measured
+final-run usage are recorded in [evaluation/](evaluation/).
+
+---
+
 Starter repository for the **HackerRank Orchestrate** 24-hour hackathon (September 2026).
 
 ## Buy or Wait?

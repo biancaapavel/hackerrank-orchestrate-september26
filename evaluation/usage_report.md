@@ -1,8 +1,8 @@
 # Token usage and cost — final full-dataset run
 
-Generated: 2026-09-12T15:12:04.466602+00:00. Requests: **250**.
-Output SHA-256: `0f35602bdfd16fbe563d4d40b5a459171b329f13fdca4f63176cd2f0f3998904`.
-Runtime: 0.683 seconds. All predictions passed validation.
+Generated: 2026-09-12T16:07:26.862752+00:00. Requests: **250**.
+Output SHA-256: `44ba75b4ea8ca3a266c383efb66d2dfd0a02f8202a16ec95878f12df264b3217`.
+Runtime: 0.911 seconds. All predictions passed validation.
 
 | Provider / model | Calls in final run | Input tokens | Output tokens | API cost (USD) |
 | --- | ---: | ---: | ---: | ---: |

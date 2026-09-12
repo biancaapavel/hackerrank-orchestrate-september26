@@ -4,7 +4,7 @@
     "amount_safe_to_pay": 2,
     "affordability_status": 22,
     "recommended_payment_method": 24,
-    "payment_plan": 18,
+    "payment_plan": 23,
     "earliest_date_for_full_payment": 19,
     "spending_changes_needed": 21
   },
@@ -53,10 +53,6 @@
         "amount_safe_to_pay": {
           "expected": "603.3",
           "actual": "615.57"
-        },
-        "payment_plan": {
-          "expected": "2026-01-03:620.40",
-          "actual": "2026-01-03:620.4"
         }
       }
     },
@@ -80,17 +76,13 @@
           "expected": "affordable_later",
           "actual": "affordable_with_plan"
         },
-        "payment_plan": {
-          "expected": "2025-04-15:996.60",
-          "actual": "2025-04-15:996.6"
-        },
         "earliest_date_for_full_payment": {
           "expected": "2025-04-15",
           "actual": ""
         },
         "spending_changes_needed": {
           "expected": "none",
-          "actual": "stop:event_649|reduce_to:event_716:24.5"
+          "actual": "stop:event_649|reduce_to:event_716:24.50"
         }
       }
     },
@@ -158,7 +150,7 @@
         },
         "spending_changes_needed": {
           "expected": "none",
-          "actual": "reduce_to:event_1054:1072.5|stop:event_1016"
+          "actual": "reduce_to:event_1054:1072.50|stop:event_1016"
         }
       }
     },
@@ -168,10 +160,6 @@
         "amount_safe_to_pay": {
           "expected": "433.4",
           "actual": "812.01"
-        },
-        "payment_plan": {
-          "expected": "2024-05-15:941.60",
-          "actual": "2024-05-15:941.6"
         }
       }
     },
@@ -212,10 +200,6 @@
         "amount_safe_to_pay": {
           "expected": "462",
           "actual": "546.02"
-        },
-        "payment_plan": {
-          "expected": "2026-09-15:3246.10",
-          "actual": "2026-09-15:3246.1"
         }
       }
     },
@@ -251,10 +235,6 @@
         "affordability_status": {
           "expected": "affordable_with_plan",
           "actual": "affordable_now"
-        },
-        "payment_plan": {
-          "expected": "2026-04-03:1574.40",
-          "actual": "2026-04-03:1574.4"
         },
         "earliest_date_for_full_payment": {
           "expected": "2026-04-15",

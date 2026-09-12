@@ -27,6 +27,18 @@ def fmt(value: Decimal) -> str:
     return format(value.quantize(CENT), "f").rstrip("0").rstrip(".") if value else "0"
 
 
+def fmt_money(value: Decimal) -> str:
+    """Format a currency amount for payment_plan / spending_changes_needed.
+
+    Every solved sample keeps both cent digits when they are non-zero
+    (620.40, 996.60, 941.60) and only collapses to a bare integer when the
+    amount is a whole number (25256, not 25256.00). Unlike fmt(), this must
+    not strip a single meaningful trailing zero.
+    """
+    text = format(value.quantize(CENT), "f")
+    return text[:-3] if text.endswith(".00") else text
+
+
 def day(value: str) -> date:
     return date.fromisoformat(value)
 
