@@ -5,7 +5,7 @@ import statistics
 from collections import Counter, defaultdict
 from dataclasses import dataclass, field
 from datetime import date, timedelta
-from decimal import Decimal, ROUND_CEILING
+from decimal import Decimal, ROUND_HALF_UP
 
 from .data import Dataset, ZERO, day, money
 from .evidence import Evidence, extract
@@ -153,8 +153,9 @@ def infer_expenses(events: list[dict], start: date, end: date, evidence: Evidenc
             continue
         values = [e["value"] for e in rows]
         # Pool the history instead of repeating a high individual bill for every
-        # future period. Preserve actual cadence and round reserves upward.
-        amount = statistics.mean(values).quantize(Decimal("0.01"), rounding=ROUND_CEILING)
+        # future period. Preserve actual cadence and round the estimate to cents,
+        # consistently with explicit cash amounts and currency conversion.
+        amount = statistics.mean(values).quantize(Decimal("0.01"), rounding=ROUND_HALF_UP)
         if last["category"] == "rent":
             amount = money(amount * evidence.rent_multiplier)
         next_dates = []

@@ -54,6 +54,10 @@ def main() -> None:
                "output_sha256": hashlib.sha256(output.read_bytes()).hexdigest(),
                "model_api_calls": 0, "input_tokens": 0, "output_tokens": 0, "estimated_cost_usd": 0,
                "validation_passed": True, "image_fact_cache_hits": len(data.image_evidence),
+               "source_sha256": {p.relative_to(root).as_posix(): hashlib.sha256(p.read_bytes()).hexdigest()
+                                 for p in sorted((root / "code").rglob("*"))
+                                 if p.is_file() and "__pycache__" not in p.parts
+                                 and p.suffix in {".py", ".json", ".md"} and not p.name.startswith(".")},
                "dataset_sha256": {p.relative_to(args.dataset).as_posix(): hashlib.sha256(p.read_bytes()).hexdigest()
                                   for p in sorted([*args.dataset.glob("*.csv"), *args.dataset.glob("media/images/*.png")])}}
         (args.artifacts / "run_manifest.json").write_text(json.dumps(run, indent=2) + "\n")
@@ -87,7 +91,8 @@ and extraction protocol are included so that this distinction is reviewable.
 
 This report is regenerated only by the full-dataset run. Running public-example
 evaluation does not overwrite it. `run_manifest.json` records input and output
-hashes connecting these measurements to the delivered predictions.
+hashes connecting these measurements to the delivered predictions, together with
+hashes of the code and cached evidence used for the run.
 '''
         (args.artifacts / "usage_report.md").write_text(usage, encoding="utf-8")
     print(f"Wrote {len(rows)} predictions to {output}")

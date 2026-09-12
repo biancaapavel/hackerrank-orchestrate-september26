@@ -9,7 +9,7 @@ Python packages are required for inference.
 python3 code/main.py
 python3 code/main.py --samples
 python3 -m unittest discover -s code/tests -v
-python3 code/package_submission.py
+python3 code/package_submission.py --refresh
 ```
 
 Read [the solution guide](code/README.md) for the architecture, assumptions, image

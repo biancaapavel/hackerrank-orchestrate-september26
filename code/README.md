@@ -13,6 +13,7 @@ submission root:
 ```bash
 python3 code/main.py
 python3 code/main.py --samples
+python3 code/analyze_samples.py --output evaluation/sample_errors.md
 python3 -m unittest discover -s code/tests -v
 ```
 
@@ -41,7 +42,7 @@ Override paths with `--dataset`, `--output`, and `--artifacts` if needed.
 5. Infer recurring expenses from repeated timing. Aggregate regular groceries,
    transport, and explicitly adjustable dining budgets across merchants. Infer
    monthly bills only with at least three months of supporting history. Use the
-   observed historical mean and round debit reserves upward to the nearest cent.
+   observed historical mean and round estimates to the nearest cent, half up.
 6. Forecast through request date plus 90 days. Project supported regular salaries;
    avoid extending gig payouts, commissions, ended employment, or a one-off invoice
    into unsupported future income. A generic base-pay confirmation does not override
@@ -91,8 +92,8 @@ they are not an independent held-out evaluation. Hidden-test performance is unkn
 
 The numerical forecast is an estimate, not recovered hidden ground truth. Its main
 uncertainties are variable-spending amounts, sparse/new recurring commitments, and
-conflicting generic salary messages. Repeating the observed mean is conservative
-about rounding, but it does not provide a statistical worst-case spending bound.
+conflicting generic salary messages. Repeating the observed mean with cent rounding
+does not provide a statistical worst-case spending bound.
 Irregular, fixed-tagged dining purchases at unrelated merchants are not treated as
 an ongoing commitment; clearly monthly bills and adjustable dining budgets are.
 
@@ -110,13 +111,37 @@ deadline prevent recommending it. No late payment plan is recommended.
 ## Package
 
 ```bash
-python3 code/package_submission.py
+python3 code/package_submission.py --refresh
 ```
 
-This requires a validated full run whose manifest matches `output.csv`. It creates
+This final command runs the full unit suite, evaluates all public samples, writes
+the error-harness report, and regenerates `output.csv` and its usage report. It then
+checks row coverage, source and dataset hashes, the output hash, and independently
+replays every full-run balance trace before creating the archive. Omit `--refresh`
+to package an existing run; stale source, inputs or outputs are rejected. It creates
 root-level `code.zip` with code, tests, documentation, participant data, output, and
 the required root-level `evaluation/usage_report.md`. It excludes credentials,
 caches, git metadata, and `log.txt`. The transcript is submitted separately.
 
 The challenge contract is in `problem_statement.md`. Development logging follows
 the repository's `AGENTS.md`.
+
+## Diagnose and compare public samples
+
+```bash
+python3 code/analyze_samples.py --request-id request_10
+python3 code/analyze_samples.py --summary-only
+python3 code/analyze_samples.py --output evaluation/sample_errors.md --json evaluation/sample_diagnostics.json
+```
+
+Each sample includes expected versus actual values for all six scored fields,
+recurrence estimates, supporting messages, the complete flow list, and all daily
+balances. The harness independently replays the trace and shows the effect of paying
+the expected safe amount today. It strips sample output fields before invoking the
+predictor. `--request-id` may be repeated; unknown sample IDs fail explicitly.
+
+`evaluation/improvement_report.md` records the frozen initial classification of all
+23 amount misses, seven isolated hypothesis trials, categorical review, and limits
+of the retained rounding change. Exact trial patches and metrics are retained in
+`evaluation/hypothesis_results.json`. No sample ID, label, or classification is used
+by full-dataset inference.

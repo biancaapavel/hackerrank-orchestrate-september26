@@ -9,14 +9,14 @@
     "spending_changes_needed": 21
   },
   "semantic_payment_plan_matches": 23,
-  "mean_safe_amount_error_as_fraction_of_request": 0.052097102959925506,
+  "mean_safe_amount_error_as_fraction_of_request": 0.05211256452437586,
   "differences": [
     {
       "request_id": "request_02",
       "differences": {
         "amount_safe_to_pay": {
           "expected": "17229139.2",
-          "actual": "18336765.49"
+          "actual": "18336765.46"
         }
       }
     },
@@ -25,7 +25,7 @@
       "differences": {
         "amount_safe_to_pay": {
           "expected": "873000",
-          "actual": "1121649.65"
+          "actual": "1121649.64"
         }
       }
     },
@@ -34,7 +34,7 @@
       "differences": {
         "amount_safe_to_pay": {
           "expected": "8401800",
-          "actual": "12357921.14"
+          "actual": "12357921.12"
         }
       }
     },
@@ -52,7 +52,7 @@
       "differences": {
         "amount_safe_to_pay": {
           "expected": "603.3",
-          "actual": "615.58"
+          "actual": "615.57"
         }
       }
     },
@@ -61,7 +61,7 @@
       "differences": {
         "amount_safe_to_pay": {
           "expected": "87170.56",
-          "actual": "86237.22"
+          "actual": "86237.19"
         }
       }
     },
@@ -70,7 +70,7 @@
       "differences": {
         "amount_safe_to_pay": {
           "expected": "284.57",
-          "actual": "285.2"
+          "actual": "285.18"
         },
         "affordability_status": {
           "expected": "affordable_later",
@@ -91,7 +91,7 @@
       "differences": {
         "amount_safe_to_pay": {
           "expected": "166.61",
-          "actual": "151.96"
+          "actual": "151.86"
         },
         "affordability_status": {
           "expected": "affordable_now",
@@ -125,7 +125,7 @@
       "differences": {
         "amount_safe_to_pay": {
           "expected": "12510645",
-          "actual": "12319866.62"
+          "actual": "12319866.6"
         },
         "earliest_date_for_full_payment": {
           "expected": "2025-07-15",
@@ -142,7 +142,7 @@
       "differences": {
         "amount_safe_to_pay": {
           "expected": "65164",
-          "actual": "60370.23"
+          "actual": "60370.2"
         },
         "earliest_date_for_full_payment": {
           "expected": "2026-04-05",
@@ -159,7 +159,7 @@
       "differences": {
         "amount_safe_to_pay": {
           "expected": "433.4",
-          "actual": "812.13"
+          "actual": "812.01"
         }
       }
     },
@@ -168,7 +168,7 @@
       "differences": {
         "amount_safe_to_pay": {
           "expected": "597.74",
-          "actual": "616.29"
+          "actual": "616.27"
         }
       }
     },
@@ -177,7 +177,7 @@
       "differences": {
         "amount_safe_to_pay": {
           "expected": "83.05",
-          "actual": "5.08"
+          "actual": "5.07"
         }
       }
     },
@@ -199,7 +199,7 @@
       "differences": {
         "amount_safe_to_pay": {
           "expected": "462",
-          "actual": "546.05"
+          "actual": "546.02"
         }
       }
     },
@@ -208,11 +208,11 @@
       "differences": {
         "amount_safe_to_pay": {
           "expected": "28820",
-          "actual": "25176.15"
+          "actual": "25176.12"
         },
         "payment_plan": {
           "expected": "2024-09-04:28820|2024-09-15:10840",
-          "actual": "2024-09-04:25176.15|2024-09-15:14483.85"
+          "actual": "2024-09-04:25176.12|2024-09-15:14483.88"
         }
       }
     },
@@ -221,7 +221,7 @@
       "differences": {
         "amount_safe_to_pay": {
           "expected": "5400",
-          "actual": "8969.68"
+          "actual": "8969.66"
         }
       }
     },
@@ -251,7 +251,7 @@
       "differences": {
         "amount_safe_to_pay": {
           "expected": "475.46",
-          "actual": "480.69"
+          "actual": "480.66"
         }
       }
     },
@@ -260,7 +260,7 @@
       "differences": {
         "amount_safe_to_pay": {
           "expected": "9152",
-          "actual": "8360.17"
+          "actual": "8360.16"
         }
       }
     },
@@ -269,7 +269,7 @@
       "differences": {
         "amount_safe_to_pay": {
           "expected": "13420",
-          "actual": "13539.29"
+          "actual": "13539.25"
         }
       }
     },
@@ -278,7 +278,7 @@
       "differences": {
         "amount_safe_to_pay": {
           "expected": "1425000",
-          "actual": "2445438.17"
+          "actual": "2445438.16"
         }
       }
     }

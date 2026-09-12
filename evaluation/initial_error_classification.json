@@ -1,0 +1,266 @@
+{
+  "stage": "Frozen before production forecast changes or hypothesis trials",
+  "baseline_mean_normalized_error": 0.05211256452437586,
+  "bucket_counts": {
+    "recurring_amount": 14,
+    "recurring_inference": 4,
+    "boundary_or_edge": 2,
+    "unresolved_visible_data": 3
+  },
+  "interpretation": "Buckets are evidence-based working diagnoses, not recovered hidden ground truth. Low-confidence and unresolved cases must not be fitted with request-specific rules. No amount miss is uniquely attributable to income before its first trough.",
+  "samples": [
+    {
+      "request_id": "request_02",
+      "bucket": "recurring_amount",
+      "confidence": "medium",
+      "expected": "17229139.2",
+      "baseline_actual": "18336765.46",
+      "signed_error": "1107626.26",
+      "trough_day": 8,
+      "trough_headroom": "18336765.46",
+      "assessment": "The first trough precedes the documented raise. Groceries, transport, utilities and healthcare means determine the reserve; the excluded 21-day dining stream next occurs after that trough. No wrong income explains today's error."
+    },
+    {
+      "request_id": "request_03",
+      "bucket": "recurring_inference",
+      "confidence": "medium",
+      "expected": "873000",
+      "baseline_actual": "1121649.64",
+      "signed_error": "248649.64",
+      "trough_day": 11,
+      "trough_headroom": "1121649.64",
+      "assessment": "Nine fixed-tagged dining purchases occur every 21 days; the blanket fixed-dining exclusion omits a due purchase on the first trough date. Including this budget is a hypothesis, not a full explanation of the residual."
+    },
+    {
+      "request_id": "request_04",
+      "bucket": "recurring_inference",
+      "confidence": "medium",
+      "expected": "8401800",
+      "baseline_actual": "12357921.12",
+      "signed_error": "3956121.12",
+      "trough_day": 9,
+      "trough_headroom": "12357921.12",
+      "assessment": "Thirteen fixed-tagged dining purchases occur every 14 days, including a projected purchase before payday. They are excluded solely by flexibility. One omitted mean purchase explains part, but not all, of the large error."
+    },
+    {
+      "request_id": "request_05",
+      "bucket": "boundary_or_edge",
+      "confidence": "high on trace; unknown label cause",
+      "expected": "737",
+      "baseline_actual": "0",
+      "signed_error": "-737",
+      "trough_day": 90,
+      "trough_headroom": "-4939.39",
+      "assessment": "No salary is projected after Final employer payroll. Baseline first breaches the floor on day 88 with rent; day-90 transport only worsens it. No explicit or duplicate flow exists. Dropping the final day cannot recover the positive label."
+    },
+    {
+      "request_id": "request_06",
+      "bucket": "recurring_amount",
+      "confidence": "medium",
+      "expected": "603.3",
+      "baseline_actual": "615.57",
+      "signed_error": "12.27",
+      "trough_day": 10,
+      "trough_headroom": "615.57",
+      "assessment": "The trough precedes temporary salary. Variable groceries, transport, shopping and utilities estimates explain a small reserve discrepancy. Fixed dining is also excluded, but adding two pre-payday dining purchases would overshoot the label."
+    },
+    {
+      "request_id": "request_07",
+      "bucket": "recurring_amount",
+      "confidence": "medium",
+      "expected": "87170.56",
+      "baseline_actual": "86237.19",
+      "signed_error": "-933.37",
+      "trough_day": 15,
+      "trough_headroom": "86237.19",
+      "assessment": "The documented salary delay is respected. Variable groceries, transport, dining and utility estimates set the pre-payday trough; rounding alone cannot explain INR 933.37."
+    },
+    {
+      "request_id": "request_08",
+      "bucket": "recurring_amount",
+      "confidence": "medium",
+      "expected": "284.57",
+      "baseline_actual": "285.18",
+      "signed_error": "0.61",
+      "trough_day": 6,
+      "trough_headroom": "285.18",
+      "assessment": "The EUR 0.61 amount miss is at the first pre-salary trough. The later-date/status error is distinct: long-run expenses consume the extra income by the last forecast days. The reduced-pay message conflicts with historical amounts, so salary recovery must not be invented."
+    },
+    {
+      "request_id": "request_09",
+      "bucket": "unresolved_visible_data",
+      "confidence": "low",
+      "expected": "166.61",
+      "baseline_actual": "151.86",
+      "signed_error": "-14.75",
+      "trough_day": 90,
+      "trough_headroom": "151.86",
+      "assessment": "No eligible confirmed salary. Small variable reserve differences accumulate over 90 days and determine whether the request clears the floor. The final-day rent is real; removing it would conceal the uncertainty. A positive label is not proof of forecast safety."
+    },
+    {
+      "request_id": "request_10",
+      "bucket": "boundary_or_edge",
+      "confidence": "high on trace; unknown label cause",
+      "expected": "12700",
+      "baseline_actual": "0",
+      "signed_error": "-12700",
+      "trough_day": 90,
+      "trough_headroom": "-47349.51",
+      "assessment": "Unconfirmed gig earnings are correctly excluded. Baseline first breaches the floor on day 87 with rent, before day-90 groceries. No duplicate or explicit flow exists. The positive label requires an unsupported change to income, expenses or horizon."
+    },
+    {
+      "request_id": "request_11",
+      "bucket": "recurring_amount",
+      "confidence": "medium",
+      "expected": "12510645",
+      "baseline_actual": "12319866.6",
+      "signed_error": "-190778.4",
+      "trough_day": 11,
+      "trough_headroom": "12319866.6",
+      "assessment": "The amount trough is before the first salary; variable reserves explain its difference. Lower settled base salary is used instead of the larger generic confirmation. The extra cloud stop may arise from a marginal reserve error; earliest-date disagreement also depends on later cadence/income."
+    },
+    {
+      "request_id": "request_12",
+      "bucket": "unresolved_visible_data",
+      "confidence": "low",
+      "expected": "65164",
+      "baseline_actual": "60370.2",
+      "signed_error": "-4793.8",
+      "trough_day": 87,
+      "trough_headroom": "60370.2",
+      "assessment": "The ended seasonal contract correctly contributes no income. Variable dining, shopping, utilities and essential budgets accumulate at the day-87 trough. No duplicate or final-day charge is present. No unique amount-estimation rule is recoverable from the label."
+    },
+    {
+      "request_id": "request_13",
+      "bucket": "recurring_inference",
+      "confidence": "medium",
+      "expected": "433.4",
+      "baseline_actual": "812.01",
+      "signed_error": "378.61",
+      "trough_day": 68,
+      "trough_headroom": "812.01",
+      "assessment": "Thirteen fixed-tagged dining purchases repeat every 14 days but are omitted. Several fall before the day-68 trough. The second household income is irregular and no longer observed; its omission is supported, so do not invent it to fit the label."
+    },
+    {
+      "request_id": "request_14",
+      "bucket": "recurring_amount",
+      "confidence": "medium",
+      "expected": "597.74",
+      "baseline_actual": "616.27",
+      "signed_error": "18.53",
+      "trough_day": 10,
+      "trough_headroom": "616.27",
+      "assessment": "Resumed salary is explicitly confirmed and begins after the first trough. Variable groceries, transport, utilities, shopping and healthcare amounts set the EUR 18.53 difference."
+    },
+    {
+      "request_id": "request_15",
+      "bucket": "recurring_amount",
+      "confidence": "medium",
+      "expected": "83.05",
+      "baseline_actual": "5.07",
+      "signed_error": "-77.98",
+      "trough_day": 8,
+      "trough_headroom": "5.07",
+      "assessment": "The first salary is correctly dated after the trough. The request-day groceries prediction and the second weekly groceries/transport events before payday create timing sensitivity; the EUR 77.98 gap is too large to attribute to cent rounding."
+    },
+    {
+      "request_id": "request_17",
+      "bucket": "recurring_amount",
+      "confidence": "medium",
+      "expected": "243849.58",
+      "baseline_actual": "243023.67",
+      "signed_error": "-825.91",
+      "trough_day": 13,
+      "trough_headroom": "243023.67",
+      "assessment": "Confirmed salary is correct. The first trough reflects two groceries/transport periods plus dining and utilities. The earliest-date miss involves later recurring expense totals as well as the small initial amount error."
+    },
+    {
+      "request_id": "request_18",
+      "bucket": "recurring_amount",
+      "confidence": "medium",
+      "expected": "462",
+      "baseline_actual": "546.02",
+      "signed_error": "84.02",
+      "trough_day": 7,
+      "trough_headroom": "546.02",
+      "assessment": "Dining next falls on payday, so the same-day closing convention keeps it out of the preceding trough. The EUR 84.02 gap is near one dining reserve, but the visible dates do not justify moving it earlier."
+    },
+    {
+      "request_id": "request_19",
+      "bucket": "recurring_amount",
+      "confidence": "medium",
+      "expected": "28820",
+      "baseline_actual": "25176.12",
+      "signed_error": "-3643.88",
+      "trough_day": 10,
+      "trough_headroom": "25176.12",
+      "assessment": "Weekly groceries are due on request day and again before payday. A separate image-backed grocery purchase settled the day before and is already in opening cash. Mean amounts/cadence affect the gap; no duplicate future charge is present."
+    },
+    {
+      "request_id": "request_20",
+      "bucket": "recurring_amount",
+      "confidence": "medium",
+      "expected": "5400",
+      "baseline_actual": "8969.66",
+      "signed_error": "3569.66",
+      "trough_day": 6,
+      "trough_headroom": "8969.66",
+      "assessment": "The pending refund is excluded and the pending order and image-backed telecom debit are reserved separately. The gap is near a dining period, whose observed 21-day cadence next falls after payday; its date cannot be shifted solely to fit the label."
+    },
+    {
+      "request_id": "request_21",
+      "bucket": "unresolved_visible_data",
+      "confidence": "low",
+      "expected": "1543.35",
+      "baseline_actual": "1574.4",
+      "signed_error": "31.05",
+      "trough_day": 9,
+      "trough_headroom": "1673.12",
+      "assessment": "Uncapped baseline capacity is USD 1673.12 versus a 1543.35 label. Dining and transport next occur after payday; moving one of each before payday would nearly bridge the gap but lacks date evidence. This timing uncertainty causes the status/change mismatch."
+    },
+    {
+      "request_id": "request_22",
+      "bucket": "recurring_amount",
+      "confidence": "medium",
+      "expected": "475.46",
+      "baseline_actual": "480.66",
+      "signed_error": "5.2",
+      "trough_day": 9,
+      "trough_headroom": "480.66",
+      "assessment": "Unrealized portfolio value is excluded. A small variable-reserve error sets today's difference. Fixed dining is omitted, but adding its next pre-payday mean would overshoot the label; test the rule across all samples."
+    },
+    {
+      "request_id": "request_23",
+      "bucket": "recurring_amount",
+      "confidence": "medium",
+      "expected": "9152",
+      "baseline_actual": "8360.16",
+      "signed_error": "-791.84",
+      "trough_day": 7,
+      "trough_headroom": "8360.16",
+      "assessment": "Pending prize credit is excluded and the pharmacy debit is reserved. Two groceries periods fall before salary. Variable mean and cadence assumptions explain the remaining uncertainty."
+    },
+    {
+      "request_id": "request_24",
+      "bucket": "recurring_amount",
+      "confidence": "medium",
+      "expected": "13420",
+      "baseline_actual": "13539.25",
+      "signed_error": "119.25",
+      "trough_day": 9,
+      "trough_headroom": "13539.25",
+      "assessment": "Settled prize proceeds are already in opening cash and not repeated. The scheduled insurance debit is a distinct obligation. The small gap lies in variable recurring amounts before payday."
+    },
+    {
+      "request_id": "request_25",
+      "bucket": "recurring_inference",
+      "confidence": "medium",
+      "expected": "1425000",
+      "baseline_actual": "2445438.16",
+      "signed_error": "1020438.16",
+      "trough_day": 8,
+      "trough_headroom": "2445438.16",
+      "assessment": "Twenty-five fixed-tagged dining purchases repeat every seven days. Two projected purchases before payday are excluded. The error is near one mean dining amount; test inclusion globally because it may overreserve two occurrences."
+    }
+  ]
+}

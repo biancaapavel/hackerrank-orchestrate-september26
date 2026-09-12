@@ -1,0 +1,13 @@
+{
+  "requests": 250,
+  "output_sha256": "8bdcc5b5bff0ee7fc8d5cc4a0d907f27b0dcea371d2f3348d9a2868da137c2f1",
+  "output_manifest_match": true,
+  "source_hashes_verified": true,
+  "dataset_hashes_verified": true,
+  "row_coverage_verified": true,
+  "full_balance_replay_passed": true,
+  "usage_report_output_match": true,
+  "unit_tests": "passed",
+  "sample_evaluation": "passed",
+  "sample_diagnostic_replay": "passed"
+}

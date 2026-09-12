@@ -1,8 +1,8 @@
 # Token usage and cost — final full-dataset run
 
-Generated: 2026-09-12T16:07:26.862752+00:00. Requests: **250**.
-Output SHA-256: `44ba75b4ea8ca3a266c383efb66d2dfd0a02f8202a16ec95878f12df264b3217`.
-Runtime: 0.911 seconds. All predictions passed validation.
+Generated: 2026-09-12T18:35:41.296691+00:00. Requests: **250**.
+Output SHA-256: `8bdcc5b5bff0ee7fc8d5cc4a0d907f27b0dcea371d2f3348d9a2868da137c2f1`.
+Runtime: 0.843 seconds. All predictions passed validation.
 
 | Provider / model | Calls in final run | Input tokens | Output tokens | API cost (USD) |
 | --- | ---: | ---: | ---: | ---: |
@@ -28,4 +28,5 @@ and extraction protocol are included so that this distinction is reviewable.
 
 This report is regenerated only by the full-dataset run. Running public-example
 evaluation does not overwrite it. `run_manifest.json` records input and output
-hashes connecting these measurements to the delivered predictions.
+hashes connecting these measurements to the delivered predictions, together with
+hashes of the code and cached evidence used for the run.

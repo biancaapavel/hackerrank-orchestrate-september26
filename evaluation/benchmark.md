@@ -1,49 +1,26 @@
 # Public-example benchmark
 
-Evaluated 25 public solved examples using the same predictor as the full run.
-These examples informed development. This is a development benchmark, not an
-independent holdout or a measure of hidden-test performance.
+Evaluated 25 public solved examples using the same predictor as the full run. These examples informed development; this is not a held-out evaluation or a hidden-test score.
 
 | Check | Matches | Rate |
 | --- | ---: | ---: |
-| Affordability status | 22/25 | 88% |
-| Recommended payment method | 24/25 | 96% |
-| Payment schedule (dates and numeric amounts) | 23/25 | 92% |
-| Payment schedule (exact string, incl. cent formatting) | 23/25 | 92% |
-| Earliest full-payment date | 19/25 | 76% |
-| Spending changes (exact text) | 21/25 | 84% |
-| Safe amount (exact to the cent) | 2/25 | 8% |
+| amount_safe_to_pay | 2/25 | 8% |
+| affordability_status | 22/25 | 88% |
+| recommended_payment_method | 24/25 | 96% |
+| payment_plan | 23/25 | 92% |
+| earliest_date_for_full_payment | 19/25 | 76% |
+| spending_changes_needed | 21/25 | 84% |
+| Semantic payment schedule | 23/25 | 92% |
 
-`payment_plan` previously matched literally on only 18/25 because `fmt()`
-stripped a meaningful trailing zero (e.g. `620.40` became `620.4`), even
-though every solved sample keeps both cent digits whenever they are
-non-zero and only collapses to a bare integer when the amount truly has no
-cents. `fmt_money()` now preserves that; `amount_safe_to_pay` is unaffected
-since its own ground truth does strip trailing zeros (e.g. `603.3`).
+Mean absolute safe-amount error, normalized by each requested amount: **5.20971030%** (baseline **5.21125645%**). Amounts span multiple currencies, so raw currency errors are not averaged together.
 
-Mean absolute safe-amount error, normalized by each request's requested amount:
-**5.21%**.
-This is not 1 minus an overall hackathon score. Amounts span five currencies, so
-we do not average unconverted absolute currency errors across users.
+The only retained forecast change is half-up cent rounding of historical means. Six other tested variants had no benefit or regressed. Categorical counts remain unchanged. See `improvement_report.md` for the full classification of all 23 amount misses, categorical review and unresolved zero-capacity cases.
 
-All 25 sample rows and 250 evaluation predictions pass the independent contract
-and balance-replay validator. The 26 unit tests cover cash-flow troughs, date-90
-obligations, pending credits/debits, investment cash states, invoice recurrence,
-image-payday ambiguity, multilingual facts, untrusted instructions, FX date/direction,
-preferences, deadlines, exact plans, protected expenses, and rejection of tampering.
-
-`sample_metrics.json` contains every mismatch. Money formatting is normalized only
-for the semantic payment-schedule metric; the exact-field metrics are literal.
-
-The dominant remaining uncertainty is recurrence/variable-spending estimation.
-The supplied data does not expose the hidden forecast model. This solution uses
-historical means with upward cent rounding, documented cadence inference, and
-conservative income recognition. Validation proves feasibility under the documented
-forecast, not equality to hidden financial labels.
-
-Reproduce:
+The 31-test suite covers the original forecast, evidence, plan and validator cases plus five packaging guards. Full-run results and hash checks are recorded in `validation_report.json`. Validation proves feasibility under the documented forecast, not agreement with hidden labels or a statistical worst-case spending bound.
 
 ```bash
 python3 code/main.py --samples
+python3 code/analyze_samples.py --summary-only
 python3 -m unittest discover -s code/tests -v
+python3 code/package_submission.py --refresh
 ```
